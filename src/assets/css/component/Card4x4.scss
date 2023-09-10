@@ -1,0 +1,39 @@
+.card-4x4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    background: white;
+    color: black;
+    padding: 15px;
+
+    .card-item {
+        display: grid;
+        grid-template-columns: 45% 45%;
+        justify-content: space-around;
+
+        .cart_item_link {
+            margin: 15px 0;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 130px;
+            }
+
+            .title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+
+}

@@ -1,22 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import './Header.scss'
+import React, { useState } from 'react';
+import '../../assets/css/component/Header.scss';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/logo/logo.png';
-import { BiChevronDown, BiSearch } from 'react-icons/bi';
-import { MdOutlineShoppingCart, MdOutlineLocationOn } from 'react-icons/md';
+import { BiSearch } from 'react-icons/bi';
+import { MdOutlineShoppingCart } from 'react-icons/md';
 import { LiaBarsSolid } from 'react-icons/lia';
 import { FaUserCircle } from 'react-icons/fa';
 import { RxCross2 } from 'react-icons/rx';
 import { product, sidebarData } from '../../data/data';
 
 export default function Header() {
-    const [isDropdownOpen, setDropdownOpen] = useState({
-        language: false,
-        account: false,
-    });
     const [sidebar, setSidebar] = useState(false);
-    const [searchValue, setSearchValue] = useState("");// To hold the value of the search input
-    const [searchItem, setSearchItem] = useState([]); // To store the search results
+    const [searchValue, setSearchValue] = useState("");
+    const [searchItem, setSearchItem] = useState([]);
 
     // Handle searching user
     const handleSerach = (e) => {
@@ -32,22 +28,10 @@ export default function Header() {
         setSearchItem(matchingItems);
     }
 
-    const toggleDropdown = (e, type) => {
-        // e.preventDefault();
-        if (type === "language") {
-            setDropdownOpen((prevState) => ({
-                ...prevState,
-                language: !prevState.language,
-            }));
-        } else if (type === "account") {
-            setDropdownOpen((prevState) => ({
-                ...prevState,
-                account: !prevState.account,
-            }));
-        }
-        else {
-            setSidebar(!sidebar)
-        }
+    const toggleDropdown = () => {
+
+        setSidebar(!sidebar)
+
     };
 
     return (
@@ -113,16 +97,16 @@ export default function Header() {
                     </p >
                     <p>Selles</p>
                     <p>Pay</p>
+                    <p>Electronic</p>
                     <p>Gift Card</p>
                     <p>Buy Again</p>
                     <p>Offers</p>
                     <p>Coupons</p>
                     <p>Health</p>
                     <p>Household & Personal Care</p>
-                    <p>AmazonBasics</p>
-                    <p>Subcribe</p>
-                    <p>Electronic</p>
+                    <p>Basics Needs</p>
                     <p>Books</p>
+                    <p>Subcribe</p>
                 </div>
 
             </div>

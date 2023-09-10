@@ -4,7 +4,7 @@ import SlideShow from '../../component/SlideShow/SlideShow';
 import Card4x4 from '../../component/4x4Card/Card4x4';
 import Scrollcard from '../../component/Scrollcard/Scrollcard';
 import { product } from '../../data/data';
-
+import { ad } from '../../data/images';
 export default function Home() {
 
     // Function to filter products based on category and subcategory
@@ -104,7 +104,7 @@ export default function Home() {
                     />
                     <div className="ad" style={{ height: "auto" }}>
                         <h3>New Faison Design (Add Section)</h3>
-                        <img src="https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg" />
+                        <img src={ad} />
                     </div>
                     <Card4x4
                         data={filterProducts(
@@ -130,11 +130,11 @@ export default function Home() {
                     />
                     <div className="ad" style={{ height: "auto" }}>
                         <h3>New Faison Design (Add Section)</h3>
-                        <img src="https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg" />
+                        <img src={ad} />
                     </div>
                     <div className="ad" style={{ height: "auto" }}>
                         <h3>New Faison Design (Add Section)</h3>
-                        <img src="https://images.ctfassets.net/hrltx12pl8hq/3j5RylRv1ZdswxcBaMi0y7/b84fa97296bd2350db6ea194c0dce7db/Music_Icon.jpg" />
+                        <img src={ad} />
                     </div>
                     <Card4x4
                         data={filterProducts(

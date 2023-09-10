@@ -4,9 +4,9 @@ import thirdimg from '../assets/images/home slider/3rd.jpg';
 import fourthimg from '../assets/images/home slider/4th.jpg';
 import fifthimg from '../assets/images/home slider/5th.jpg';
 import sixthimg from '../assets/images/home slider/6th.jpg';
+import ad from '../assets/images/home slider/ad.jpg';
 
-
-export { firstimg, secondimg, thirdimg, fourthimg, fifthimg, sixthimg };
+export { firstimg, secondimg, thirdimg, fourthimg, fifthimg, sixthimg, ad };
 
 import cardfirstimg from '../assets/images/home slider/1st.jpg';
 import cardsecondimg from '../assets/images/home slider/2nd.jpg';

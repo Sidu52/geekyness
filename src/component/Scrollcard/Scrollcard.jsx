@@ -1,5 +1,5 @@
 import React from 'react';
-import './Scrollcard.scss';
+import '../../assets/css/component/Scrollcard.scss';
 import { Link } from 'react-router-dom';
 import { BsChevronLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { cardfirstimg, cardsecondimg, cardthirdimg, cardfourthimg, cardfifthimg, cardsixthimg, cardseventhimg, cardeightmg, cardninthimg, cardtenthimg, cardeleventhimg, cardtwelththimg } from '../../data/images';

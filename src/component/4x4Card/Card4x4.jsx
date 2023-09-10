@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Card4x4.scss";
+import "../../assets/css/component/Card4x4.scss";
 import { Link } from 'react-router-dom';
 
 export default function Card4x4(props) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.scss';
+import '../../assets/css/component/Footer.scss';
 import Logo from '../../assets/images/logo/logo.png';
 
 export default function Footer() {
@@ -44,7 +44,6 @@ export default function Footer() {
             <div className="footer_language_container">
                 <div className='logo'>
                     <img src={Logo} />
-                    <div className="dropdown">ss</div>
                 </div>
                 <div className="language">
                     <p>Australia</p>

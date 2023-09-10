@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Product.scss'
+import '../../assets/css/pages/Product.scss';
 import { useParams } from 'react-router-dom';
 import { IoStarSharp } from 'react-icons/io5';
 import { TbTruckDelivery, TbPigMoney, TbReplaceFilled, TbTruckReturn, TbBrandMyOppo } from 'react-icons/tb';

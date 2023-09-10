@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import './SearchPage.scss';
+import '../../assets/css/pages/SearchPage.scss';
 import { useParams, useNavigate, } from 'react-router-dom';
-import { BsBag, BsCurrencyRupee, } from 'react-icons/bs';
+import { BsBag, BsCurrencyRupee, BsFilterRight } from 'react-icons/bs';
+import { RxCross2 } from 'react-icons/rx';
 import { MdDiscount } from 'react-icons/md';
 import { product } from '../../data/data';
 
@@ -13,7 +14,43 @@ function SearchPage() {
         product_types: "",
     });
     const [filterData, setFilterData] = useState([]);
+    const [filterIcon, setFilterIcon] = useState(false);
+    const [showFilterBox, setFilterBox] = useState(false);
+
     const { id } = useParams();
+    //Handle window Resize here
+    useEffect(() => {
+        function handleResize() {
+            if (window.innerWidth <= 500) {
+                setFilterIcon(true);
+            } else {
+                setFilterIcon(false);
+            }
+        }
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    function handlefillteroffbutton() {
+        setForm(
+            {
+                project: "",
+                min: 0,
+                max: 0,
+                budget_types: "",
+                jobtype: "",
+                skills: [],
+            }
+        )
+        setFilterBox(!showFilterBox);
+    }
+    const handleApplyClick = () => {
+        setFilterBox(false)
+    };
+
 
     useEffect(() => {
         const item = product[id - 1];
@@ -22,6 +59,7 @@ function SearchPage() {
 
     // Function to filter products based according to serching
     function filterProductsData() {
+        setFilterBox(false);
         if (form.min !== "" && form.max !== "" && form.product_types !== "") {
             const minPrice = parseFloat(form.min);
             const maxPrice = parseFloat(form.max);
@@ -82,19 +120,17 @@ function SearchPage() {
 
     return (
         <div className="serchpage_main_container">
-            <div className="filter_box">
+            <div className="filter_box" style={{ height: showFilterBox || window.innerWidth > 500 ? "100%" : "37px" }}>
+                {/* <RxCross2 style={{ display: window.innerWidth > 750 ? "none" : "block" }} onClick={(() => setFilterBox(!showFilterBox))} /> */}
+                <BsFilterRight
+                    style={{ display: !showFilterBox && window.innerWidth <= 500 ? "block" : "none" }}
+                    onClick={((e) => setFilterBox(!showFilterBox))}
+                />
                 <div className="heading_box">
                     <h3>Filter</h3>
-                    <p onClick={(e) => setForm(
-                        {
-                            project: "",
-                            min: 0,
-                            max: 0,
-                            budget_types: "",
-                            jobtype: "",
-                            skills: [],
-                        }
-                    )}>Clear All</p>
+                    <p
+                        style={{ display: showFilterBox || window.innerWidth > 500 ? "block" : "none" }}
+                        onClick={handlefillteroffbutton}>Clear All</p>
                 </div>
                 <div className="price_box">
                     <h3>Price</h3>
@@ -144,6 +180,7 @@ function SearchPage() {
                     <div>
                         <p>{filterData.length} items found</p>
                     </div>
+
                 </div>
 
                 {filterData.map((item, index) => (

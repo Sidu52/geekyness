@@ -1,0 +1,121 @@
+.footer {
+    color: white;
+
+    .footer_link_container {
+        background: #a42d14;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20%;
+        justify-content: space-around;
+        padding: 30px;
+
+
+        .footer_link {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            cursor: pointer;
+
+            h4 {
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 14px;
+                font-weight: 200;
+                cursor: pointer;
+            }
+        }
+    }
+
+    hr {
+        background: #821f0b;
+        height: 3px;
+        border: none;
+    }
+
+    .footer_language_container {
+        background: #a42d14;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 20px;
+
+            img {
+                width: 70px;
+                height: 50px;
+                cursor: pointer;
+            }
+        }
+
+        .language {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 150px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 200;
+        }
+    }
+
+    .footer_bottom {
+        background: #821f0b;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+
+        span {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            font-weight: 200;
+
+        }
+
+
+    }
+
+    @media (max-width:750px) {
+        .footer_link_container {
+            grid-template-columns: 47% 47%;
+            gap: 40px;
+
+            .footer_link {
+                h4 {
+                    font-size: 16px;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .footer_language_container .language {
+            gap: 15px;
+            margin: 20px;
+        }
+
+        .footer_bottom {
+            span {
+                font-size: 12px;
+                font-weight: 200;
+            }
+        }
+    }
+
+    @media (max-width:500px) {
+        .footer_language_container .language {
+            gap: 5px;
+        }
+    }
+}
